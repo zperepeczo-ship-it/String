@@ -77,7 +77,7 @@ public class Morestrings {
 	}
 
 	public static String[] sortTwoSortedArraysIntoOne(String s[], String t[]) {
-		String u[] = new String[a.length + b.length];
+		String u[] = new String[s.length + t.length];
 		int i = 0, j = 0, c = 0;
 		
 		
@@ -94,7 +94,6 @@ public class Morestrings {
 			else if (s[i].compareTo(t[j]) > 0) {
 				u[c] = s[i];
 				i++;
-				
 			} 
 			else {
 				u[c] = t[j];
@@ -106,4 +105,5 @@ public class Morestrings {
 		
 		return u;
 	
+}
 }
