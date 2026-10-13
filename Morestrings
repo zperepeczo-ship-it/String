@@ -28,20 +28,19 @@ return a;
   
 }
 
-//public static int howManyOfTheseWords (String s, String text){
-//     
-//    int c = 0;
-//        
-//            
-//        for(int i = text.length ; i < s.length(); i++) {
-//            if (s.substring(i).m)            
-//            c++;
-//            
-//            
-//            return c;
-//        }
-//}
-//        
+public static int howManyOfTheseWords (String s, String word){
+    String sLower = s.toLowerCase;
+    String wordLower = word.toLowerCase;   
+    int c = 0;
+       for(int i = 0 ; i < s.length()-word.length(); i++) {
+            if (wordLower.equals(sLower.substring(i, i + wordLower.length() ))            
+            c++;
+            }
+        }    
+            return c;
+        
+}
+        
 
 
 
