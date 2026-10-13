@@ -4,13 +4,9 @@ public static String[] outputWords (String s){
         if(!Character.isLetterOrDigit(a[i].charAt(a[i].length()-1))){
            
             a[i] = a[i].substring(0,a[i].length()-1);
-
-        
         }
     }   
         return a;
-    
-
 }
 
 public static String everySecondLetterCapital (String s){
