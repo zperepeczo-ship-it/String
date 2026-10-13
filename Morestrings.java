@@ -2,6 +2,10 @@ package strings;
 
 public class Morestrings {
 
+	public static void main(String[] args) {
+		System.out.println(howManyOfTheseWords("alAla ma kotala","AlA"));
+	}
+	
 	public static String[] outputWords(String s) {
 		String[] a = s.split(" ");
 		for (int i = 0; i < a.length; i++) {
