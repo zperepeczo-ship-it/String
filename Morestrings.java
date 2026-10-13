@@ -41,27 +41,23 @@ public class Morestrings {
 				c++;
 		}
 		return c;
-
 	}
 
-	// public static String[] returnBiggerWord (String s[], String a){
-//	    String x [] = new String [s.length];
-//	    int c = 0;    
-//	        for(int i = 0;i<s.length;i++){
-//	            
-//	            if(s[i].compareTo(a)>0){
-//	                x[c] = s[i] ;
-//	                c++;
-//	            }
-//	           
-//	        }
-//	       if(c==0){
-//	           return null;
-//	       } 
-//	       String[] b = new String [c];
-	// return b ;
-	//
-	// }
+	public static String[] returnBiggerWord(String s[], String a) {
+		String x[] = new String[s.length];
+		int c = 0;
+		for (int i = 0; i < s.length; i++) {
+			if (s[i].compareTo(a) > 0) {
+				x[c] = s[i];
+				c++;
+			}
+		}
+		if (c == 0) {
+			return null;
+		}
+		String[] b = new String[c];
+		return b;
+	}
 
 	public static String[] orderWordsAscending(String a[]) {
 
