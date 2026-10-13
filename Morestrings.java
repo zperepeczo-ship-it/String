@@ -32,7 +32,7 @@ public class Morestrings {
 		String sLower = s.toLowerCase();
 		String wordLower = word.toLowerCase();
 		int c = 0;
-		for (int i = 0; i < s.length() - word.length(); i++) {
+		for (int i = 0; i <= s.length() - word.length(); i++) {
 			if (wordLower.equals(sLower.substring(i, i + wordLower.length())))
 				c++;
 		}
