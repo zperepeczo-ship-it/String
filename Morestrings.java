@@ -56,6 +56,9 @@ public class Morestrings {
 			return null;
 		}
 		String[] b = new String[c];
+		for(int i = 0; i < c; i++){
+			b[i] = x[i];
+		}
 		return b;
 	}
 
@@ -73,20 +76,34 @@ public class Morestrings {
 		return a;
 	}
 
-	public static String[] sortTwoSortedArraysIntoOne(String a[], String b[]) {
-		String c[] = new String[a.length + b.length];
-		int i = 0, d = 0, f = 0;
-		while (i < a.length - 1) {
-			if (a[i].compareTo(b[d]) > 0) {
-				c[f] = a[i];
-			} else
-				i++;
-		}
-		while (i < a.length - 1) {
-			if (a[i].compareTo(b[d]) > 0) {
-				c[f] = a[i];
+	public static String[] sortTwoSortedArraysIntoOne(String s[], String t[]) {
+		String u[] = new String[a.length + b.length];
+		int i = 0, j = 0, c = 0;
+		
+		
+		
+		while (c < s.length + t.length) {
+			if(i > s.length - 1){
+				u[c] = t[j];
+				j++;
 			}
-		}
-		return c;
-	}
+			else if (j > t.length - 1){
+				u[c] = s[i];
+				i++;
+			}
+			else if (s[i].compareTo(t[j]) > 0) {
+				u[c] = s[i];
+				i++;
+				
+			} 
+			else {
+				u[c] = t[j];
+				j++;
+			}
+			c++;
+		
+			}
+		
+		return u;
+	
 }
