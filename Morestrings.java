@@ -1,11 +1,14 @@
 package strings;
 
+import java.util.Arrays;
+
 public class Morestrings {
 
 	public static void main(String[] args) {
-		System.out.println(howManyOfTheseWords("alAla ma kotala","AlA"));
+		System.out.println(howManyOfTheseWords("alAla ma kotala", "AlA"));
+		System.out.println(Arrays.toString(sortTwoSortedArraysIntoOne(new String[]{"ala", "kasia", "misia"},new String[]{"basia", "tosia", "zosia"})));
 	}
-	
+
 	public static String[] outputWords(String s) {
 		String[] a = s.split(" ");
 		for (int i = 0; i < a.length; i++) {
@@ -56,7 +59,7 @@ public class Morestrings {
 			return null;
 		}
 		String[] b = new String[c];
-		for(int i = 0; i < c; i++){
+		for (int i = 0; i < c; i++) {
 			b[i] = x[i];
 		}
 		return b;
@@ -79,31 +82,24 @@ public class Morestrings {
 	public static String[] sortTwoSortedArraysIntoOne(String s[], String t[]) {
 		String u[] = new String[s.length + t.length];
 		int i = 0, j = 0, c = 0;
-		
-		
-		
+
 		while (c < s.length + t.length) {
-			if(i > s.length - 1){
+			if (i > s.length - 1) {
 				u[c] = t[j];
 				j++;
-			}
-			else if (j > t.length - 1){
+			} else if (j > t.length - 1) {
 				u[c] = s[i];
 				i++;
-			}
-			else if (s[i].compareTo(t[j]) > 0) {
+			} else if (s[i].compareTo(t[j]) < 0) {
 				u[c] = s[i];
 				i++;
-			} 
-			else {
+
+			} else {
 				u[c] = t[j];
 				j++;
 			}
 			c++;
-		
-			}
-		
+		}
 		return u;
-	
-}
+	}
 }
