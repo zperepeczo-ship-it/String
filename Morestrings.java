@@ -1,125 +1,92 @@
-public static String[] outputWords (String s){
-    String [] a = s.split(" ");
-    for (int i = 0; i < a.length; i++) {
-        if(!Character.isLetterOrDigit(a[i].charAt(a[i].length()-1))){
-           
-            a[i] = a[i].substring(0,a[i].length()-1);
-        }
-    }   
-        return a;
+package strings;
+
+public class Morestrings {
+
+	public static String[] outputWords(String s) {
+		String[] a = s.split(" ");
+		for (int i = 0; i < a.length; i++) {
+			if (!Character.isLetterOrDigit(a[i].charAt(a[i].length() - 1))) {
+				a[i] = a[i].substring(0, a[i].length() - 1);
+			}
+		}
+		return a;
+	}
+
+	public static String everySecondLetterCapital(String s) {
+		int c = 2;
+		String a = "";
+		for (int i = 0; i < s.length(); i++) {
+			if (Character.isLetter(s.charAt(i))) {
+				if (c % 2 == 0) {
+					a = a + (s.charAt(i) + "").toUpperCase();
+				} else
+					a = a + (s.charAt(i) + "").toLowerCase();
+				c++;
+			} else
+				a = a + (s.charAt(i));
+		}
+		return a;
+	}
+
+	public static int howManyOfTheseWords(String s, String word) {
+		String sLower = s.toLowerCase();
+		String wordLower = word.toLowerCase();
+		int c = 0;
+		for (int i = 0; i < s.length() - word.length(); i++) {
+			if (wordLower.equals(sLower.substring(i, i + wordLower.length())))
+				c++;
+		}
+		return c;
+
+	}
+
+	// public static String[] returnBiggerWord (String s[], String a){
+//	    String x [] = new String [s.length];
+//	    int c = 0;    
+//	        for(int i = 0;i<s.length;i++){
+//	            
+//	            if(s[i].compareTo(a)>0){
+//	                x[c] = s[i] ;
+//	                c++;
+//	            }
+//	           
+//	        }
+//	       if(c==0){
+//	           return null;
+//	       } 
+//	       String[] b = new String [c];
+	// return b ;
+	//
+	// }
+
+	public static String[] orderWordsAscending(String a[]) {
+
+		for (int k = 0; k < a.length - 1; k++) {
+			for (int i = 0; i < a.length - 1; i++) {
+				if (a[i].compareTo(a[i + 1]) > 0) {
+					String temp = a[i];
+					a[i] = a[i + 1];
+					a[i + 1] = temp;
+				}
+			}
+		}
+		return a;
+	}
+
+	public static String[] sortTwoSortedArraysIntoOne(String a[], String b[]) {
+		String c[] = new String[a.length + b.length];
+		int i = 0, d = 0, f = 0;
+		while (i < a.length - 1) {
+			if (a[i].compareTo(b[d]) > 0) {
+				c[f] = a[i];
+			} else
+				i++;
+		}
+		while (i < a.length - 1) {
+			if (a[i].compareTo(b[d]) > 0) {
+				c[f] = a[i];
+			}
+		}
+		return c;
+	}
 }
-
-public static String everySecondLetterCapital (String s){
-    int c = 2;
-    String a = "";
-    for (int i = 0; i < s.length(); i++) {
-        if (Character.isLetter(s.charAt(i))) {
-            if(c%2 == 0){
-                a = a + (s.charAt(i)+"").toUpperCase();
-            }
-            else
-               a = a + (s.charAt(i)+"").toLowerCase();
-            c++;
-        }
-        else
-            a = a + (s.charAt(i));
-    }
-return a;
-  
-}
-
-public static int howManyOfTheseWords (String s, String word){
-    String sLower = s.toLowerCase;
-    String wordLower = word.toLowerCase;   
-    int c = 0;
-       for(int i = 0 ; i < s.length()-word.length(); i++) {
-            if (wordLower.equals(sLower.substring(i, i + wordLower.length() ))            
-            c++;
-            }
-        }    
-            return c;
-        
-}
-        
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-//public static String[] returnBiggerWord (String s[], String a){
-//    String x [] = new String [s.length];
-//    int c = 0;    
-//        for(int i = 0;i<s.length;i++){
-//            
-//            if(s[i].compareTo(a)>0){
-//                x[c] = s[i] ;
-//                c++;
-//            }
-//           
-//        }
-//       if(c==0){
-//           return null;
-//       } 
-//       String[] b = new String [c];
-//return b ;    
-//    
-//}
-
-
-
-
-
-
-
-
-public static String[] orderWordsAscending (String a[]){
-   for(int k = 0; k<a.length-1; k++){
-         for(int i = 0; i<a.length-1; i++){
-            if(a[i].compareTo(a[i+1])>0){ 
-                String temp = a[i];
-                a[i] = a[i+1];
-                a[i+1] = temp;
-            }    
-        }    
-    }
-        return a;
-    }
-            
-}
-
-
-public static String[] sortTwoSortedArraysIntoOne (String a [], String b []){
-    String c [] = new String [a.length + b.length] ;
-    int i=0, d=0, f=0;    
-        while(i<a.length-1){
-        if(a[i].compareTo(b[d])>0){
-        c[f] = a[i];
-            else
-                i++;
-}
-       while(i<a.length-1){
-        if(a[i].compareTo(b[d])>0){
-        c[f] = a[i];
-
-
-return c ; 
-}
-
-
-
-
-
-
-
-
