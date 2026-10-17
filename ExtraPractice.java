@@ -19,8 +19,16 @@ public class ExtraPractice {
 		System.out.println(Arrays.toString(s));
 
 		// System.out.println(indexOfAlphabeticallyBiggestWord(s, false));
+
+		
 	}
 
+	public static void printXByX(int x) {
+		System.out.printf("%4d", i*j);
+		System.out.println();
+	}
+	
+	
 	public static void zadanie() {
 		for (int i = 1; i <= 5; i++) {
 			for (int j = 1; j <= i; j++) {
