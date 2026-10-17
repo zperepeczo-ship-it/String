@@ -24,10 +24,14 @@ public class ExtraPractice {
 	}
 
 	public static void printXByX(int x) {
-		System.out.printf("%4d", i*j);
-		System.out.println();
+		for (int i = 1; i <= x; i++){
+			for (int j =1; j<=x;j++){
+			System.out.printf("%4d", i*j);
+			}
+				
+			System.out.println();
 	}
-	
+	}
 	
 	public static void zadanie() {
 		for (int i = 1; i <= 5; i++) {
