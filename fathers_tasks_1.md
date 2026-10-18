@@ -13,6 +13,11 @@ for (int i = 1; i <= 5; i++) {
     System.out.println(i);
 }
 ```
+int i = 1;
+while(i<=5){
+System.out.println(i);
+i++;
+}
 
 ### Exercise 2: Print even numbers from 2 to 10
 
@@ -23,6 +28,12 @@ for (int i = 2; i <= 10; i += 2) {
     System.out.println(i);
 }
 ```
+int i = 2;
+while(i<=10){
+System.out.println(i);
+i+=2;
+}
+
 
 ### Exercise 3: Calculate the sum from 1 to 5
 
@@ -43,7 +54,13 @@ System.out.println(sum);
 ```text
 15
 ```
-
+int sum = 0;
+int i = 1;
+while(i<=5){
+sum =+ i;
+i++;
+}
+System.out.println(sum);
 ## Part B: Convert `while` loops into `for` loops
 
 ### Exercise 4: Print numbers from 10 to 1
@@ -58,6 +75,9 @@ while (i >= 1) {
     i--;
 }
 ```
+for(int i = 10; i>= 1; i—-){
+System.out.println(i);
+}
 
 ### Exercise 5: Print the 3 times table
 
@@ -71,6 +91,9 @@ while (i <= 10) {
     i++;
 }
 ```
+for(int i = 1; i<=10; i++){
+System.out.println("3 x " + i + " = " + (3 * i));
+}
 
 **Expected output (first three lines):**
 
