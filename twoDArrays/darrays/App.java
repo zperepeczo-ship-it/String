@@ -144,8 +144,11 @@ public class App {
 		int[] eachDiagonalSum = new int[array2d.length];
 		for (int diagonal = 0; diagonal < array2d.length; diagonal++) {
 			eachDiagonalSum[diagonal] = 0;
-			for (int column = 0; column < array2d[0].length; column++) {
-				eachDiagonalSum[diagonal] += array2d[(diagonal+column) % array2d.length][column];
+			for (int elementInDiagonal = 0; elementInDiagonal < array2d[0].length; elementInDiagonal++) {
+				int row = (diagonal + elementInDiagonal) % array2d.length;
+				int column = elementInDiagonal;
+				// eachDiagonalSum[diagonal] += array2d[(diagonal+elementInDiagonal) % array2d.length][elementInDiagonal];
+				eachDiagonalSum[diagonal] += array2d[row][column];
 			}
 		}
 		return eachDiagonalSum;
