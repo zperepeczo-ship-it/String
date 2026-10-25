@@ -12,7 +12,7 @@ public class App {
 	public static void main(String[] args) {
 		int[][] b = new int[2][2]; // 3 is rows, 2 is columns
 		int[][] a = { { 3, -8, -9, 4 }, { 4, 2, 3, 3 }, { 4, 5, 6, -2 } }; // i is rows and k columns
-		//int[][] a = { {1} }; // i is rows and k columns
+		// int[][] a = { {1} }; // i is rows and k columns
 //        fillArray(b);
 //        System.out.print(toString(b));
 //      System.out.println(Arrays.toString(sumOfEachRow(a)));
@@ -21,9 +21,12 @@ public class App {
 //		System.out.println(maxValue(a));
 //        System.out.println(Arrays.toString(sumOfEachColumn(a)));
 //        System.out.println(maxValueIndex(a));
-        System.out.println(Arrays.toString(maxValueInEachRow(a)));
-        //System.out.println(Arrays.toString(maxValueEachRow2d(a)));
-        
+		System.out.println(Arrays.toString(maxValueInEachRow(a)));
+		
+		System.out.println(Arrays.toString(sumEachDiagonal(a)));
+		
+		// System.out.println(Arrays.toString(maxValueEachRow2d(a)));
+
 		System.out.println(countHowManyColumnsAreAscending(a));
 	}
 
@@ -118,22 +121,34 @@ public class App {
 			}
 			if (i == a.length - 1) {
 				c++;
-			}	
+			}
 		}
 		return c;
 	}
 
 	public static int maxValue1d(int[] row) {
 		int max = row[0];
-		for (int i=1;i<row.length;i++) 
+		for (int i = 1; i < row.length; i++)
 			max = max < row[i] ? row[i] : max;
 		return max;
 	}
-	
+
 	public static int[] maxValueEachRow2d(int[][] array2d) {
 		int[] max = new int[array2d.length];
-		for (int i=0; i<array2d.length; i++) 
+		for (int i = 0; i < array2d.length; i++)
 			max[i] = maxValue1d(array2d[i]);
 		return max;
 	}
+
+	public static int[] sumEachDiagonal(int[][] array2d) {
+		int[] eachDiagonalSum = new int[array2d.length];
+		for (int diagonal = 0; diagonal < array2d.length; diagonal++) {
+			eachDiagonalSum[diagonal] = 0;
+			for (int column = 0; column < array2d[0].length; column++) {
+				eachDiagonalSum[diagonal] += array2d[(diagonal+column) % array2d.length][column];
+			}
+		}
+		return eachDiagonalSum;
+	}
+
 }
