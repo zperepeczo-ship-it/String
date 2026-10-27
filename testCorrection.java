@@ -122,4 +122,29 @@ public static String[] commonNames (String[] names1, String[] names2){
         return repeatNames;
 }
 }
+public static String[] commonNames (String[] names1, String[] names2){
+    String[] repeatNames = new String [names1.length];
+    int j = 0;
+    for(int i = 0; i < names1.length; i++){
+        for(int k = 0; k < names2.length;k++){
+           if(names1[i].compareTo(names2[k]) == 0){
+                repeatNames[j] = names1[i];
+                j++;
+            }
+        }
+    }
+    if(j == 0){
+            return null;   
+    }   
+
+    String [] rnames = new String [j];
+        for(int i = 0; i < j; i++){
+            rnames[i] = repeatNames[i];
+           
+        }
+        return rnames;
+}
+
+}
+
 
