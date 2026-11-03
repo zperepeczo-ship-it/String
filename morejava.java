@@ -163,4 +163,22 @@ public class morejava {
 		}
 		return product;
 	}
+public static double biggestAverageOfColumns (int [][]a){
+            double c[] = new double [a[0].length];
+            for (int columns = 0; columns < a[0].length; columns++){
+                double avg = 0;
+                for (int rows = 0; rows < a.length; rows++){
+                    avg = avg + a[rows][columns];
+                }
+                c[columns] = avg/a.length ;
+                
+            }
+            double max = c[0];
+            for (int j = 0; j < c.length; j++){
+                if(max < c[j]){
+                    max = c[j];
+                }
+            }
+        return max;    
+       } 
 }
