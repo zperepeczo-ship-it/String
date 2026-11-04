@@ -181,4 +181,35 @@ public static double biggestAverageOfColumns (int [][]a){
             }
         return max;    
        } 
+public static int[] getNthLargestElementCoordinates (int [][]a, int n){
+	
+	if (n > a.length * a[0].length || n =< 0{
+		return null;
+	}
+	int max;
+	int k;
+	int []b = new int [2];
+	int []c = new int [n];
+	for (int i = 0; i < n; i++){
+		max = a[0][0];
+		k = 0;
+		for (int row = 0; row < a.length ; row++){
+			for (int column = 0; column < a[0].length; column++){
+				if (a[row][column] > max){
+					if(c[k] != a[row][column]){
+					a[row][column] = max;
+					b[0] = row;
+					b[1] = column;
+					}else
+						k++;
+				}
+			}
+		}
+		c[i] = max;
+	} // end of for loop which increases variable i lol xd 
+	return b;
 }
+}
+	
+
+	
