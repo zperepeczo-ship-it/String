@@ -19,65 +19,85 @@ public class morejava {
 						{ 0, 0, 1, 2 } //
 				}; // i is rows and k columns
 
-		for (int[] c : a1) {
-			System.out.println(Arrays.toString(c));
-		}
+//		for (int[] c : a1) {
+//			System.out.println(Arrays.toString(c));
+//		}
 
 		System.out.println();
 
+//
+//		System.out.println();
+//
 		for (int[] c : a) {
 			System.out.println(Arrays.toString(c));
 		}
 
-		System.out.println();
+		int[] coords = getNthLargestElementCoordinates(a, 3);
 
-		System.out.println(Arrays.toString(sumEchDiagonalColumns(a)));
+		System.out.println(coords[0] + ", " + coords[1]);
 
-		System.out.println(maxValueInWhichRow(a));
-
-		System.out.println();
-
-		System.out.println(sumOfAllMaxValuesInRows(a));
-
-		int[][] b = changeRowsAndColumnsMatrixTranspositions(a);
-
-		System.out.println();
-
-		for (int i = 0; i < b.length; i++) {
-			System.out.println(Arrays.toString(b[i]));
-		}
-
-		System.out.println();
-
-		for (int[] c : b) {
-			System.out.println(Arrays.toString(c));
-		}
-
-		System.out.println();
-
-		System.out.println(maxValueInWhichRow(b));
-
-		System.out.println();
-
-		System.out.println();
-
-		System.out.println(sumOfAllMaxValuesInRows(b));
-
-		System.out.println();
-
-		int[][] d = sumOfTwo2dArrays(a, a1);
-
-		for (int[] c : d) {
-			System.out.println(Arrays.toString(c));
-		}
-
-		System.out.println();
-
-		int[][] e = productOfTwo2dArrays(b, a);
-
-		for (int[] c : e) {
-			System.out.println(Arrays.toString(c));
-		}
+//
+//		System.out.println();
+//
+//		System.out.println(biggestAverageOfColumns(a));
+//
+//		System.out.println();
+//
+//		System.out.println(Arrays.toString(sumEchDiagonalColumns(a)));
+//
+//		System.out.println(maxValueInWhichRow(a));
+//
+//		System.out.println();
+//
+//		System.out.println(sumOfAllMaxValuesInRows(a));
+//
+//		int[][] b = changeRowsAndColumnsMatrixTranspositions(a);
+//
+//		System.out.println();
+//
+//		System.out.println(biggestAverageOfColumns(b));
+//
+//		System.out.println();
+//
+//		for (int i = 0; i < b.length; i++) {
+//			System.out.println(Arrays.toString(b[i]));
+//		}
+//
+//		System.out.println();
+//
+//		for (int[] c : b) {
+//			System.out.println(Arrays.toString(c));
+//		}
+//
+//		System.out.println();
+//
+//		System.out.println(maxValueInWhichRow(b));
+//
+//		System.out.println();
+//
+//		System.out.println();
+//
+//		System.out.println(sumOfAllMaxValuesInRows(b));
+//
+//		System.out.println();
+//
+//		int[][] d = sumOfTwo2dArrays(a, a1);
+//
+//		for (int[] c : d) {
+//			System.out.println(Arrays.toString(c));
+//		}
+//
+//		System.out.println();
+//
+//		int[][] e = productOfTwo2dArrays(b, a);
+//
+//		for (int[] c : e) {
+//			System.out.println(Arrays.toString(c));
+//		}
+//
+//		System.out.println();
+//
+//		System.out.println(biggestAverageOfColumns(a));
 
 	}
 
@@ -163,53 +183,63 @@ public class morejava {
 		}
 		return product;
 	}
-public static double biggestAverageOfColumns (int [][]a){
-            double c[] = new double [a[0].length];
-            for (int columns = 0; columns < a[0].length; columns++){
-                double avg = 0;
-                for (int rows = 0; rows < a.length; rows++){
-                    avg = avg + a[rows][columns];
-                }
-                c[columns] = avg/a.length ;
-                
-            }
-            double max = c[0];
-            for (int j = 0; j < c.length; j++){
-                if(max < c[j]){
-                    max = c[j];
-                }
-            }
-        return max;    
-       } 
-public static int[] getNthLargestElementCoordinates (int [][]a, int n){
-	
-	if (n > a.length * a[0].length || n =< 0{
-		return null;
+
+	public static double biggestAverageOfColumns(int[][] a) {
+		double c[] = new double[a[0].length];
+		for (int columns = 0; columns < a[0].length; columns++) {
+			double avg = 0;
+			for (int rows = 0; rows < a.length; rows++) {
+				avg = avg + a[rows][columns];
+			}
+			c[columns] = avg / a.length;
+		}
+		double max = c[0];
+		for (int j = 0; j < c.length; j++) {
+			if (max < c[j]) {
+				max = c[j];
+			}
+		}
+		return max;
 	}
-	int max;
-	int k;
-	int []b = new int [2];
-	int []c = new int [n];
-	for (int i = 0; i < n; i++){
-		max = a[0][0];
-		k = 0;
-		for (int row = 0; row < a.length ; row++){
-			for (int column = 0; column < a[0].length; column++){
-				if (a[row][column] > max){
-					if(c[k] != a[row][column]){
-					a[row][column] = max;
-					b[0] = row;
-					b[1] = column;
-					}else
-						k++;
+
+	public static int[] getNthLargestElementCoordinates(int[][] a, int n) {
+
+		if (n > a.length * a[0].length || n <= 0) {
+			return null;
+		}
+		int max;
+		int min = a[0][0];
+
+		for (int row = 0; row < a.length; row++) {
+			for (int column = 0; column < a[0].length; column++) {
+				if (a[row][column] < min) {
+					a[row][column] = min;
 				}
 			}
 		}
-		c[i] = max;
-	} // end of for loop which increases variable i lol xd 
-	return b;
-}
-}
-	
 
-	
+		int k;
+		int[] b = new int[2];
+		int[] c = new int[n];
+		for (int i = 0; i < n; i++) {
+			max = min;
+			k = 0;
+			for (int row = 0; row < a.length; row++) {
+				for (int column = 0; column < a[0].length; column++) {
+					if (a[row][column] > max) {
+						if (k < i && c[k] == a[row][column]) {
+							k++;
+						} else {
+							a[row][column] = max;
+							b[0] = row;
+							b[1] = column;
+						}
+					}
+				}
+			}
+			c[i] = max;
+		} // end of for loop which increases variable i lol xd
+		return b;
+	}
+
+}
