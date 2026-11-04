@@ -157,7 +157,7 @@ public class morejava {
 		for (int rows = 0; rows < product.length; rows++) {
 			for (int columns = 0; columns < product[0].length; columns++) {
 				for (int sth = 0; sth < a1[0].length; sth++) {
-					product[rows][columns] = a1[rows][sth] * a2[sth][columns];
+					product[rows][columns] += a1[rows][sth] * a2[sth][columns];
 				}
 			}
 		}
